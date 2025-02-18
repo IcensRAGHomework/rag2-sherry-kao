@@ -27,4 +27,4 @@ def hw02_2(q2_pdf):
     )
     chapter_chunks = text_splitter.split_text(pdf_text_combined)
     
-    return chapter_chunks
+    return len(chapter_chunks)

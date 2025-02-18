@@ -18,7 +18,7 @@ def hw02_2(q2_pdf):
     loader = PyPDFLoader(q2_pdf)
     pdf_text = loader.load()
     
-    pdf_text_combined = "".join([doc.page_content for doc in pdf_text])
+    pdf_text_combined = " ".join([doc.page_content for doc in pdf_text])
     text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=5,  # 每個 chunk 的最大字符數
     chunk_overlap=0,  # 每個 chunk 之間的重疊字符數

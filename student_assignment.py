@@ -7,7 +7,12 @@ q2_pdf = "勞動基準法.pdf"
 
 
 def hw02_1(q1_pdf):
-    pass
+    loader = PyPDFLoader(file_path='OpenSourceLicenses.pdf')
+    docs = loader.load()
+
+    return docs[(len(docs))]
+
+
 
 def hw02_2(q2_pdf):
     pass

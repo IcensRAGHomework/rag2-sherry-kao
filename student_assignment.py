@@ -15,4 +15,16 @@ def hw02_1(q1_pdf):
 
 
 def hw02_2(q2_pdf):
-    pass
+    loader = PyPDFLoader(q2_pdf)
+    docs = loader.load()
+    
+    pdf_text_combined = "".join([doc.page_content for doc in pdf_text])
+    text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=10,  # 每個 chunk 的最大字符數
+    chunk_overlap=0,  # 每個 chunk 之間的重疊字符數
+    separators=[r"第\s+.*\s+章\s+", r"第\s+.*\s+條\s+",],
+    is_separator_regex=True,
+    )
+    chapter_chunks = text_splitter.split_text(pdf_text_combined)
+    
+    return chapter_chunks

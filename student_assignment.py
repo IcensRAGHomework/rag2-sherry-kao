@@ -10,7 +10,7 @@ def hw02_1(q1_pdf):
     loader = PyPDFLoader(file_path='OpenSourceLicenses.pdf')
     docs = loader.load()
 
-    return docs[(len(docs))]
+    return docs[(len(docs)-1)]
 
 
 

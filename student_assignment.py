@@ -16,7 +16,7 @@ def hw02_1(q1_pdf):
 
 def hw02_2(q2_pdf):
     loader = PyPDFLoader(q2_pdf)
-    docs = loader.load()
+    pdf_text = loader.load()
     
     pdf_text_combined = "".join([doc.page_content for doc in pdf_text])
     text_splitter = RecursiveCharacterTextSplitter(
